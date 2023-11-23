@@ -1,0 +1,29 @@
+# version: '3'
+# services:
+#   frontend:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     ports:
+#       - "3000:3000"
+#     networks:
+#       - china324/ayur_react_v1.0
+
+# networks:
+#   china324/ayur_react_v1.0:   # Define the custom network "dairy-mgmt-frontend"
+#     driver: bridge
+
+version: '3'
+services:
+  your-app:
+    image: china324/aayurveda-app-myapp-frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - ayurvedha-frontend
+
+networks:
+  ayurvedha-frontend:   # Define the custom network "dairy-mgmt-frontend"
+    driver: bridge
+
+
