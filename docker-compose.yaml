@@ -1,0 +1,51 @@
+version: '3'
+services:
+  service1:
+    container_name: medicine
+    image: medicine
+    ports:
+      - "2024:2024"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3306/china_ayur
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+
+  service2:
+    container_name: cart
+    image: cart
+    ports:
+      - "8085:8085"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3306/china_ayur
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+
+  service3:
+    container_name: category
+    image: category
+    ports:
+      - "2025:2025"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3306/china_ayur
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+
+  # service4:
+  #   container_name: your-app4
+  #   image: cart
+  #   ports:
+  #     - "8086:8086"
+  #   environment:
+  #     SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3306/china_ayur
+  #     SPRING_DATASOURCE_USERNAME: root
+  #     SPRING_DATASOURCE_PASSWORD: root
+
+  service4:
+    container_name: customer
+    image: customer
+    ports:
+      - "9095:9095"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3306/china_ayur
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
